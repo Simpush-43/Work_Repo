@@ -44,16 +44,14 @@ export const UpdatePlans = async (req, res) => {
 };
 
 // delete plan
-export const DeletePlan = async (req,res)=>{
+export const DeletePlan = async (req, res) => {
   try {
-    const DeletePlan = await Plan_Schema.findByIdAndDelete(
-      req.params.id
-    );
-res
-    .status(201)
-    .json({ message: "Plan Deleted successfully", DeletedPlans: DeletePlan });
+    const DeletePlan = await Plan_Schema.findByIdAndDelete(req.params.id);
+    res
+      .status(201)
+      .json({ message: "Plan Deleted successfully", DeletedPlans: DeletePlan });
   } catch (err) {
     res.status(400);
     throw new Error(err.response?.data?.message || "Failed to Delete plans");
   }
-}
+};
