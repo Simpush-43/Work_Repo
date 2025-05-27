@@ -6,7 +6,7 @@ const PlanSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    Descripton: {
+    Description: {
       type: String,
     },
     Plantype: {
